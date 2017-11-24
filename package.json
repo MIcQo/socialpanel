@@ -1,13 +1,13 @@
 {
-  "name": "src",
+  "name": "SocialBars",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Easy plugin for simple social bar with support videos, facebook pages, like and other widgets",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "MIcQo",
+  "license": "none",
   "dependencies": {
     "babelify": "^8.0.0",
     "bourbon": "^4.3.4",
