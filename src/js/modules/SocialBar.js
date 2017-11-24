@@ -4,15 +4,10 @@ const config = {
     panelBodyClass: ".panel-content-placeholder",
     iconClass: ".social-icon",
     iconActiveClass: "active",
-    boxClass: ".box",
-    socialClasses: ["facebook", "gplus"]
+    boxClass: ".box"
 };
 
 class SocialBar {
-
-    static socialClasses() {
-        return config.socialClasses.join(" ");
-    }
 
     openBar(e) {
         let $this = $(e.currentTarget);
@@ -31,17 +26,17 @@ class SocialBar {
         // slide content
         $(config.panelClass)
             .addClass(config.openedClass)
-            .removeClass(SocialBar.socialClasses())
-            .addClass(type);
+            .removeClass(function (index, className) {
+                return (className.match(/(^|\s)network-\S+/g) || []).join(' ');
+            })
+            .addClass("network-" + type);
     }
 
     closeBar(e) {
         if(!$(config.panelClass).hasClass(config.openedClass))
             return;
 
-        $(config.panelClass)
-            .removeClass(config.openedClass)
-            .removeClass(SocialBar.socialClasses());
+        $(config.panelClass).removeClass(config.openedClass);
     }
 }
 

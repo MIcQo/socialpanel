@@ -13,21 +13,27 @@
     z-index: 99998
     +clearfix
     .panel-content-placeholder
-        width: 350px
+        width: 370px
         border: 8px solid #000
         border-radius: 10px
         height: 556px
         display: block
         float: right
+        overflow: hidden
+        background-color: #fff
         .boxes
-            opacity: 0
+            //opacity: 0
             height: 100%
             display: block
             position: relative
+            overflow: hidden
+            transition: all 500ms ease
+            transition-delay:  0
     &.opened
         transform: translateX(0)
         .boxes
             opacity: 1
+            transition-delay: 1s
     .icons
         float: left
         padding-top: 20px
@@ -45,19 +51,21 @@
             flex-direction: column
             //transition: all 100ms ease
             i
-                margin: 0 auto
+                //margin: 0 auto
                 display: block
                 font-size: 1.25rem
+                //margin-left: -4px
+                // float: left
             &:hover
                 border-bottom-width: 5px
                 margin-top: 2px
-            +iconcolor("facebook", $facebook) 
-            +iconcolor("gplus", $google)
-            
-.social-panel.facebook .panel-content-placeholder 
-    border-color: $facebook
-.social-panel.gplus .panel-content-placeholder 
-    border-color: $google
+
+@each $network, $color in $profiles
+    .social-panel.network-#{$network} .panel-content-placeholder
+        border-color: $color
+    .social-panel .icons .social-icon
+        +iconcolor($network, $color)
+
     
 .social-panel.opened .icons .social-icon.active
     border-bottom-width: 5px
