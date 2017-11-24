@@ -11,6 +11,7 @@
   "dependencies": {
     "babelify": "^8.0.0",
     "bourbon": "^4.3.4",
+    "breakpoint-sass": "^2.7.1",
     "browserify": "^14.5.0",
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
@@ -19,6 +20,7 @@
     "gulp-compass-compile": "^1.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
+    "gulp-minify": "^2.1.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",

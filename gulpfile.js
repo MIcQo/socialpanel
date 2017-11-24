@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var minCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
+var minify = require("gulp-minify");
 var minifyjs = require('gulp-js-minify');
 var babel = require('gulp-babel');
 var browserify = require('browserify');
@@ -27,11 +28,13 @@ gulp.task('build', function (cb) {
     gulp.src(config.srcCss)
 
         // output non-minified CSS file
+        .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'expanded',
-            includePaths: require('node-bourbon').includePaths
+            includePaths: [require('node-bourbon').includePaths, './node_modules/breakpoint-sass/stylesheets']
         }).on('error', sass.logError))
         .pipe(autoprefixer())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.buildCss))
 
         // output the minified version
@@ -73,8 +76,14 @@ gulp.task("scripts", function(cb) {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.buildJs))
         // output the minified version
-        .pipe(minifyjs())
-        .pipe(rename({ extname: '.min.js' }))
+        .pipe(minify({
+            ext: {
+                src: '.js',
+                min: '.min.js'
+            },
+            preserveComments: "license"
+        }))
+        // .pipe(rename({ extname: '.min.js' }))
         .pipe(gulp.dest(config.buildJs));
     cb();
 });

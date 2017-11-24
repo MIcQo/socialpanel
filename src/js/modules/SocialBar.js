@@ -1,3 +1,11 @@
+/**!
+   SocialBar Plug-in v1.0
+   Easy plugin for simple social bar with support videos, facebook pages, like and other widgets
+   @license: none
+   @author: Michal Koval (MIcQo)
+   @preserve
+**/
+
 const config = {
     openedClass: "opened",
     panelClass: ".social-panel",
