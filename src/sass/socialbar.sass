@@ -1,0 +1,64 @@
+@import "bourbon"
+
+@import "colors"
+@import "mixins"
+
+.social-panel
+    position: fixed
+    right: 0
+    top: 7vh
+    transform: translateX(370px)
+    transition: all 400ms ease
+    height: auto
+    z-index: 99998
+    +clearfix
+    .panel-content-placeholder
+        width: 350px
+        border: 8px solid #000
+        border-radius: 10px
+        height: 556px
+        display: block
+        float: right
+        .boxes
+            opacity: 0
+            height: 100%
+            display: block
+            position: relative
+    &.opened
+        transform: translateX(0)
+        .boxes
+            opacity: 1
+    .icons
+        float: left
+        padding-top: 20px
+        .social-icon
+            padding: 20px
+            margin-bottom: 1px
+            border-bottom: 6px solid #000
+            background-color: #000
+            color: #fff
+            border-radius: 4px 0px 0px 4px
+            +size(10px)
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            //transition: all 100ms ease
+            i
+                margin: 0 auto
+                display: block
+                font-size: 1.25rem
+            &:hover
+                border-bottom-width: 5px
+                margin-top: 2px
+            +iconcolor("facebook", $facebook) 
+            +iconcolor("gplus", $google)
+            
+.social-panel.facebook .panel-content-placeholder 
+    border-color: $facebook
+.social-panel.gplus .panel-content-placeholder 
+    border-color: $google
+    
+.social-panel.opened .icons .social-icon.active
+    border-bottom-width: 5px
+    margin-top: 2px
