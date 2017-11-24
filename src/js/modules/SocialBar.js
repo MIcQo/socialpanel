@@ -10,7 +10,7 @@ const config = {
 
 class SocialBar {
 
-    get socialClasses() {
+    static socialClasses() {
         return config.socialClasses.join(" ");
     }
 
