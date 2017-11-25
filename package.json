@@ -1,6 +1,6 @@
 {
   "name": "social_panel",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Easy plugin for simple social bar with support videos, facebook pages, like and other widgets",
   "main": "gulpfile.js",
   "scripts": {
