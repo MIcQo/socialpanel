@@ -1,19 +1,17 @@
-# socialpanel
+# Social Bar
 Easy plugin for simple social bar with support videos, facebook pages, like and other widgets
 
 ### Installation:
-
 ```
 npm install -S social_bar
 ```
-### Javascript import:
 
+### Javascript import:
 ```
 require("~node_modules/social_bar/build/js/socialbar");
 ```
 
 ### HTML:
-
 ```
 <div class="social-panel">
     <div class="icons">
@@ -47,3 +45,26 @@ require("~node_modules/social_bar/build/js/socialbar");
     </div>
 </div>
 ```
+
+### Supported networks
+Networks list is only for colors, content is **not important** you can create any tab with any content yourself.
+- BandCamp
+- Delicious
+- Facebook
+- Ficly
+- Flickr
+- GitHub
+- Google+
+- Instagram
+- Kickstarter
+- Lanyrd
+- LastFM
+- LinkedIn
+- Photodrop
+- Pinterest
+- Rdio
+- SoundCloud
+- Twitter
+- Vimeo
+- YouTube
+- **other sites & own blocks**
